@@ -8,7 +8,7 @@
 {{ else }}
 <meta name="description" content="{{ .Site.Params.description }}" />
 {{ end }}
-<meta name="keywords" content="{{ if .Keywords }}{{ range .Keywords }}{{ . }}, {{ end }}{{else if isset .Site.Params "tags" }}{{ range .Site.Params.tags }}{{ . }}, {{ end }}{{end}}">
+<meta name="keywords" content="{{ if .Keywords }}{{ range .Keywords }}{{ . }}, {{ end }}{{ end }}{{if isset .Site.Params "tags" }}{{ range .Site.Params.tags }}{{ . }}, {{ end }}{{end}}">
 {{ with .Site.Params.googleplus }}
 <link rel="author" href="http://plus.google.com/+{{ . }}">
 {{ end }}
